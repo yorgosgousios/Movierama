@@ -3,12 +3,6 @@ import styles from "./MainNav.module.css";
 
 const MainNav = (props) => {
   const [input, setInput] = useState("");
-  // const [isClicked, setIsClicked] = useState(false);
-
-  // const clickHandler = () => {
-  //   setIsClicked(true);
-  //   props.onSaveClick(isClicked);
-  // };
 
   const inputHandler = (event) => {
     setInput(event.target.value);
@@ -23,7 +17,6 @@ const MainNav = (props) => {
           placeholder="Search Movies"
           onChange={inputHandler}
         />
-        {/* <button onClick={clickHandler}>Search</button> */}
       </div>
     </nav>
   );

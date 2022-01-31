@@ -4,10 +4,9 @@ import MoviesList from "./components/MoviesList";
 import { Container } from "react-bootstrap";
 import MainNav from "./components/MainNav";
 
-function App(props) {
+function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-  // const [isClicked, setIsClicked] = useState(false);
 
   const fetchMovies = async () => {
     const response = await fetch(
@@ -56,15 +55,8 @@ function App(props) {
 
   const saveInputDataHandler = (input) => {
     const inputData = input;
-    // console.log(inputData);
     setSearch(inputData);
   };
-
-  // const saveClickHandler = (isClicked) => {
-  //   const clickedData = isClicked;
-  //   setIsClicked(clickedData);
-  //   console.log(isClicked);
-  // };
 
   useEffect(() => {
     fetchMovies();
@@ -77,10 +69,7 @@ function App(props) {
 
   return (
     <Container className={styles.body}>
-      <MainNav
-        onSaveInputData={saveInputDataHandler}
-        // onSaveClick={saveClickHandler}
-      />
+      <MainNav onSaveInputData={saveInputDataHandler} />
       <MoviesList movies={movies} searchMovie={searchMovieFetch} />
     </Container>
   );
