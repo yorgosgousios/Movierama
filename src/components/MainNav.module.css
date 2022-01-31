@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: black;
+  height: 70px;
+}
+
+.navbar a {
+  margin-left: 10px;
+  color: rgb(177, 33, 33);
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar input {
+  margin-right: 50px;
+  outline: none;
+  height: 20px;
+  width: 150px;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  border: white solid 1px;
+  border-radius: 5px;
+}
