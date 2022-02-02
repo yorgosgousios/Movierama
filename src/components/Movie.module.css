@@ -6,6 +6,10 @@
   list-style: none;
 }
 
+.year {
+  text-align: center;
+}
+
 .movieboxClicked {
   z-index: 200;
   position: relative;
@@ -44,4 +48,20 @@
 .overview {
   z-index: 100;
   position: relative;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400;
+  border: 2px solid #000;
+  background-color: rgb(26, 26, 26);
+}
+
+.openDescription {
+  cursor: pointer;
+  text-align: center;
+  color: rgb(177, 33, 33);
 }

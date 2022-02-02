@@ -13,6 +13,7 @@ const MovieList = (props) => {
           overview={movie.overview}
           movieId={movie.movieId}
           key={movie.movieId}
+          yearOfRelease={movie.yearOfRelease}
         />
       ))}
     </ul>

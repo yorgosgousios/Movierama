@@ -18,7 +18,8 @@ function App() {
     const responseData = await response.json();
     console.log(responseData);
 
-    const transformedMovies = responseData.results.map((movieData) => {
+    const transformedMovies = responseData.results?.map((movieData) => {
+      const dateArray = movieData.release_date.split("-");
       return {
         title: movieData.original_title,
         release_date: movieData.release_date,
@@ -26,11 +27,14 @@ function App() {
         imgsource: movieData.poster_path,
         movieId: movieData.id,
         key: movieData.id,
+        yearOfRelease: dateArray[0],
       };
     });
     console.log(transformedMovies);
     setMovies(transformedMovies);
   };
+
+  //api.themoviedb.org/3/movie/${props.movieId}/videos
 
   const searchMovieFetch = async (search) => {
     const response = await fetch(
@@ -39,6 +43,7 @@ function App() {
     const responseData = await response.json();
 
     const transformedMovies = responseData.results?.map((movieData) => {
+      const dateArray = movieData.release_date.split("-");
       return {
         title: movieData.original_title,
         release_date: movieData.release_date,
@@ -46,11 +51,11 @@ function App() {
         imgsource: movieData.poster_path,
         movieId: movieData.id,
         key: movieData.id,
+        yearOfRelease: dateArray[0],
       };
     });
 
     setMovies(transformedMovies);
-    console.log(responseData);
   };
 
   const saveInputDataHandler = (input) => {
