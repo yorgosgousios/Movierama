@@ -16,7 +16,6 @@ function App() {
       throw new Error("Something went wrong!");
     }
     const responseData = await response.json();
-    console.log(responseData);
 
     const transformedMovies = responseData.results?.map((movieData) => {
       const dateArray = movieData.release_date.split("-");
@@ -30,7 +29,7 @@ function App() {
         yearOfRelease: dateArray[0],
       };
     });
-    console.log(transformedMovies);
+
     setMovies(transformedMovies);
   };
 

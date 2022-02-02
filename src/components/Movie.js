@@ -24,8 +24,7 @@ const Movie = (props) => {
       throw new Error("Something went wrong with trailer");
     }
     const responseData = await response.json();
-    console.log(responseData);
-    const transformedMovies = responseData.results?.map((movieData) => {
+    responseData.results?.forEach((movieData) => {
       if (movieData.type === "Trailer") {
         setMovieKey(movieData.key);
       }
