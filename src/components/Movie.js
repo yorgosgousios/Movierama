@@ -25,7 +25,11 @@ const Movie = (props) => {
     }
     const responseData = await response.json();
     console.log(responseData);
-    setMovieKey(responseData.results[0]?.key);
+    const transformedMovies = responseData.results?.map((movieData) => {
+      if (movieData.type === "Trailer") {
+        setMovieKey(movieData.key);
+      }
+    });
   };
 
   useEffect(() => {
